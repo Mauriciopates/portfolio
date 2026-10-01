@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maurício Pates — Estudante de Desenvolvimento Fullstack & Dados</title>
-<meta name="description" content="Portfólio técnico de Maurício Pates. Python, SQL, MySQL, ETL, automação. Disponível para Formação em Contexto de Trabalho (ECT) — nov 2026.">
-<meta property="og:title" content="Maurício Pates — Estudante de Desenvolvimento Fullstack & Dados">
-<meta property="og:description" content="Python · SQL · Fullstack. Pipelines ETL, modelação de dados e desenvolvimento de aplicações.">
+<title>Maurício Pates — Desenvolvedor de Software · Automação & Aplicações</title>
+<meta name="description" content="Portfólio de Maurício Pates. Aplicações desktop, automação, sistemas web e bases de dados — Python, JavaScript, SQL. Disponível para Formação em Contexto de Trabalho (ECT) — nov 2026.">
+<meta property="og:title" content="Maurício Pates — Desenvolvedor de Software · Automação & Aplicações">
+<meta property="og:description" content="Aplicações desktop, automação e web. Python · JavaScript · SQL.">
 <meta property="og:image" content="img/perfil.png">
 <meta property="og:type" content="website">
 
 <!-- ✅ FAVICON CORRIGIDO: está na raiz, não em img/
      ?v=2 força os navegadores a irem buscar o ficheiro novo — sem isto,
      o favicon fica preso na cache do browser mesmo depois de atualizado no git -->
-<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
-<link rel="alternate icon" type="image/png" href="favicon.svg?v=2">
-<link rel="apple-touch-icon" href="favicon.svg?v=2">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+<link rel="alternate icon" type="image/png" href="favicon.svg?v=3">
+<link rel="apple-touch-icon" href="favicon.svg?v=3">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,16 +87,16 @@
           Maurício <span class="hero-surname">Pates</span>
         </h1>
 
-        <h2 class="hero-title" data-i18n="hero.title">Estudante de Desenvolvimento Fullstack & Dados</h2>
+        <h2 class="hero-title" data-i18n="hero.title">Desenvolvedor de Software · Automação & Aplicações</h2>
 
         <p class="hero-stack" data-i18n="hero.stack">
-          Python · SQL · Fullstack — Especialista em Sistemas de Informação (TPSI).
-          Pipelines ETL, modelação de dados e desenvolvimento de aplicações.
+          Crio aplicações desktop, automações e sistemas web — do script que poupa horas de trabalho manual ao sistema de gestão completo. Python · JavaScript · SQL.
         </p>
 
         <div class="hero-actions">
-          <a href="#projetos" class="btn btn-primary">
-            <span data-i18n="hero.projects">Ver Projetos</span>
+          <a href="#showreel" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+            <span data-i18n="hero.projects">Ver em ação</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
@@ -156,7 +156,38 @@
   <!-- 02 · PROJETOS -->
   <section id="projetos" class="section section-projects" data-section="projetos">
 
-    <header class="section-head">
+    <header class="section-head" id="showreel">
+      <span class="section-tag" data-i18n="reel.tag">// showreel</span>
+      <h2 data-i18n="reel.title">Os meus projetos em ação</h2>
+      <p class="section-sub" data-i18n="reel.sub">Gravações reais das aplicações a funcionar. Escolhe um capítulo para saltar diretamente para o projeto.</p>
+    </header>
+
+    <div class="reel" id="reel">
+      <div class="reel-stage">
+        <video class="reel-video" id="reelVideo" muted playsinline preload="metadata" poster="videos/posters/showreel.jpg">
+          <source src="videos/showreel.mp4" type="video/mp4">
+          <source src="videos/showreel.webm" type="video/webm">
+        </video>
+        <button class="reel-bigplay" id="reelBigPlay" type="button" aria-label="Reproduzir">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20 7 4"/></svg>
+        </button>
+        <div class="reel-now" id="reelNow" aria-live="polite"></div>
+        <div class="reel-controls">
+          <button class="reel-btn" id="reelPlay" type="button" aria-label="Reproduzir / pausar">
+            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20 7 4"/></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+          </button>
+          <div class="reel-bar" id="reelBar" role="slider" aria-label="Progresso do vídeo" tabindex="0"><div class="reel-bar-fill" id="reelFill"></div><div class="reel-bar-marks" id="reelMarks"></div></div>
+          <span class="reel-time" id="reelTime">0:00</span>
+          <button class="reel-btn" id="reelFull" type="button" aria-label="Ecrã inteiro">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+          </button>
+        </div>
+      </div>
+      <ol class="reel-chapters" id="reelChapters"></ol>
+    </div>
+
+    <header class="section-head section-head-featured">
       <span class="section-tag" data-i18n="projects.tag">// projetos</span>
       <h2 data-i18n="projects.highlightTitle">Projeto em destaque</h2>
       <p class="section-sub" data-i18n="projects.highlightSub">O projeto principal do portfólio, com arquitetura completa e terminal interativo.</p>
@@ -164,15 +195,11 @@
 
     <div class="projects-featured" id="projectsFeatured"></div>
 
-    <div class="featured-to-er-wrap">
-      <svg class="featured-to-er" id="featuredToEr" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 1000 100"></svg>
-    </div>
-
     <header class="section-head section-head-er">
       <span class="section-tag" data-i18n="er.tag">// outros projetos</span>
       <h2 data-i18n="er.title">Demais Trabalhos Técnicos</h2>
       <p class="section-sub er-sub">
-        <span data-i18n="er.sub.lead">Esquema relacional dos restantes projetos —</span>
+        <span data-i18n="er.sub.lead">Automação, aplicações desktop e web —</span>
         <span class="er-sub-cta">
           <span class="pulse-dot" aria-hidden="true"></span>
           <span class="er-sub-cta-typed"><strong class="er-sub-cta-text" aria-hidden="true"></strong><span class="cta-cursor" aria-hidden="true"></span></span>
@@ -180,10 +207,8 @@
       </p>
     </header>
 
-    <div class="er-diagram-wrap" id="erDiagramWrap">
-      <svg class="er-connections" id="erConnections" aria-hidden="true"></svg>
-      <div class="er-diagram" id="erDiagram"></div>
-    </div>
+    <div class="filter-bar" id="projFilter" role="tablist" aria-label="Filtrar projetos"></div>
+    <div class="proj-grid" id="projGrid"></div>
   </section>
 
   <!-- 03 · FORMAÇÃO -->
@@ -290,6 +315,17 @@
 </button>
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<div class="vmodal" id="vmodal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="vmodal-backdrop" data-vclose></div>
+  <div class="vmodal-box">
+    <button class="vmodal-close" type="button" aria-label="Fechar" data-vclose>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <video class="vmodal-video" id="vmodalVideo" controls playsinline muted></video>
+    <div class="vmodal-info" id="vmodalInfo"></div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

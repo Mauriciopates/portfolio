@@ -1,92 +1,268 @@
 {
   "skills": [
-    { "name": "Python",      "tier": "Uso frequente",  "tier_en": "Everyday use" },
-    { "name": "JavaScript",  "tier": "Uso funcional",  "tier_en": "Working knowledge" },
-    { "name": "HTML5",       "tier": "Uso frequente",  "tier_en": "Everyday use" },
-    { "name": "CSS3",        "tier": "Uso frequente",  "tier_en": "Everyday use" },
-    { "name": "MySQL",       "tier": "Uso frequente",  "tier_en": "Everyday use" },
-    { "name": "PostgreSQL",  "tier": "Uso funcional",  "tier_en": "Working knowledge" },
-    { "name": "SQL Server",  "tier": "Uso funcional",  "tier_en": "Working knowledge" },
-    { "name": "SQLite",      "tier": "Uso funcional",  "tier_en": "Working knowledge" },
-    { "name": "MongoDB",     "tier": "Em aprendizagem", "tier_en": "Learning" },
-    { "name": "Git",         "tier": "Uso frequente",  "tier_en": "Everyday use" },
-    { "name": "Linux",       "tier": "Uso funcional",  "tier_en": "Working knowledge" },
-    { "name": "Proxmox",     "tier": "Uso funcional",  "tier_en": "Working knowledge" },
-    { "name": "Java",        "tier": "Em aprendizagem", "tier_en": "Learning" },
-    { "name": "VS Code",     "tier": "Uso frequente",  "tier_en": "Everyday use" }
+    {
+      "name": "Python",
+      "tier": "Uso frequente",
+      "tier_en": "Everyday use"
+    },
+    {
+      "name": "JavaScript",
+      "tier": "Uso funcional",
+      "tier_en": "Working knowledge"
+    },
+    {
+      "name": "HTML5",
+      "tier": "Uso frequente",
+      "tier_en": "Everyday use"
+    },
+    {
+      "name": "CSS3",
+      "tier": "Uso frequente",
+      "tier_en": "Everyday use"
+    },
+    {
+      "name": "MySQL",
+      "tier": "Uso frequente",
+      "tier_en": "Everyday use"
+    },
+    {
+      "name": "PostgreSQL",
+      "tier": "Uso funcional",
+      "tier_en": "Working knowledge"
+    },
+    {
+      "name": "SQL Server",
+      "tier": "Uso funcional",
+      "tier_en": "Working knowledge"
+    },
+    {
+      "name": "SQLite",
+      "tier": "Uso funcional",
+      "tier_en": "Working knowledge"
+    },
+    {
+      "name": "MongoDB",
+      "tier": "Em aprendizagem",
+      "tier_en": "Learning"
+    },
+    {
+      "name": "Git",
+      "tier": "Uso frequente",
+      "tier_en": "Everyday use"
+    },
+    {
+      "name": "Linux",
+      "tier": "Uso funcional",
+      "tier_en": "Working knowledge"
+    },
+    {
+      "name": "Proxmox",
+      "tier": "Uso funcional",
+      "tier_en": "Working knowledge"
+    },
+    {
+      "name": "Java",
+      "tier": "Em aprendizagem",
+      "tier_en": "Learning"
+    },
+    {
+      "name": "VS Code",
+      "tier": "Uso frequente",
+      "tier_en": "Everyday use"
+    }
   ],
-
   "chart": [
-    { "label": "Python / Dados",  "count": 2, "color": "var(--viz-blue-1)" },
-    { "label": "Web (Frontend)",  "count": 2, "color": "var(--viz-blue-2)" },
-    { "label": "ETL / Automação", "count": 2, "color": "var(--viz-blue-3)" }
+    {
+      "label": "Aplicações Desktop",
+      "label_en": "Desktop Apps",
+      "count": 2,
+      "color": "var(--viz-blue-1)"
+    },
+    {
+      "label": "Automação / ETL",
+      "label_en": "Automation / ETL",
+      "count": 2,
+      "color": "var(--viz-blue-2)"
+    },
+    {
+      "label": "Web (Frontend)",
+      "label_en": "Web (Frontend)",
+      "count": 3,
+      "color": "var(--viz-blue-3)"
+    }
   ],
-
   "projects": [
     {
       "id": "hostel",
       "name": "Sistema Unificado de Gestão de Hostel",
       "name_en": "Unified Hostel Management System",
-      "tags": "Python · MySQL · SQLite · CustomTkinter",
+      "tags": "Python · CustomTkinter · MySQL · Matplotlib",
       "year": "2026",
-      "category": "Python / Dados",
-      "category_en": "Python / Data",
+      "category": "Aplicações Desktop",
+      "category_en": "Desktop Apps",
       "image": "img/proj-hostel.png",
       "image_secondary": "img/proj-hostel-calendario.png",
-      "desc": "<p>Sistema de gestão de alojamento para 22 unidades, construído para eliminar overbooking e manter o controlo de stock em tempo real. Interface gráfica em CustomTkinter, com sincronização entre uma camada local em SQLite e uma base de dados MySQL remota.</p><p>Dividido em 3 fases de desenvolvimento:</p><ul><li><strong>Fase 1</strong> – Gestão CLI, lógica de negócio completa com persistência em JSON;</li><li><strong>Fase 2</strong> – GUI CustomTkinter, migração para SQLite, financeiro e relatórios (Atual);</li><li><strong>Fase 3</strong> – Aplicação web em Django, MySQL, servidor próprio e integração com API de reservas externas.</li></ul>",
-      "desc_en": "<p>Hostel management system for 22 units, built to eliminate overbooking and keep stock control in real time. GUI built with CustomTkinter, syncing a local SQLite layer with a remote MySQL database.</p><p>Split into 3 development phases:</p><ul><li><strong>Phase 1</strong> – CLI management, complete business logic with JSON persistence;</li><li><strong>Phase 2</strong> – CustomTkinter GUI, migration to SQLite, financial and reports (Current);</li><li><strong>Phase 3</strong> – Django web application, MySQL, self-hosted server and integration with external booking APIs.</li></ul>",
-      "stack": ["Python", "SQLite", "CustomTkinter", "Git"],
+      "desc": "<p>Sistema de gestão de alojamento local em regime misto — arrendamento mensal partilhado por lugar e estadias curtas Airbnb — para 22 unidades. Interface gráfica em CustomTkinter ligada a uma base de dados MySQL, a correr num servidor próprio (VM) acedido por túnel SSH.</p><p>Na versão atual (v1.8.0, Fase 2):</p><ul><li><strong>Operação</strong> – contratos mensais por lugar, reservas Airbnb sem sobreposição de datas, calendário semanal e planta de lugares;</li><li><strong>Stock e despesas</strong> – requisições, devoluções, rol de lavandaria, alertas de stock mínimo e aprovação de despesas;</li><li><strong>Financeiro e relatórios</strong> – dashboard com receita vs. despesas, exportação em PDF, Excel e CSV;</li><li><strong>Segurança e instalação</strong> – login com bloqueio por tentativas falhadas, passwords no Gestor de Credenciais do Windows, instalação assistida, migrações automáticas e backup diário com mysqldump.</li></ul><p>Próxima fase: aplicação web em Django.</p>",
+      "desc_en": "<p>Mixed-mode short-term rental management system — shared monthly rentals per bed and Airbnb short stays — for 22 units. CustomTkinter desktop interface backed by a MySQL database running on a self-hosted server (VM) reached through an SSH tunnel.</p><p>In the current version (v1.8.0, Phase 2):</p><ul><li><strong>Operations</strong> – per-bed monthly contracts, Airbnb bookings with no date overlap, weekly calendar and bed map;</li><li><strong>Stock and expenses</strong> – requisitions, returns, laundry roll, minimum-stock alerts and expense approval;</li><li><strong>Finance and reports</strong> – revenue vs. expenses dashboard, PDF, Excel and CSV export;</li><li><strong>Security and setup</strong> – login lockout after failed attempts, passwords in Windows Credential Manager, guided installation, automatic migrations and daily mysqldump backups.</li></ul><p>Next phase: Django web application.</p>",
+      "stack": [
+        "Python",
+        "CustomTkinter",
+        "MySQL",
+        "Matplotlib",
+        "unittest",
+        "Git"
+      ],
       "stats": [
         {
-          "num": "3",
-          "label": "Fases de Desenvolvimento",
-          "label_en": "Development Phases",
-          "sub": "CLI · GUI · Web",
-          "sub_en": "CLI · GUI · Web",
+          "num": "1 181",
+          "label": "Testes automáticos",
+          "label_en": "Automated tests",
+          "sub": "unittest · 100% a passar",
+          "sub_en": "unittest · 100% passing",
           "size": "big"
         },
         {
-          "num": "0",
-          "label": "Casos de Overbooking",
-          "label_en": "Overbooking Cases",
-          "icon": "check",
-          "size": "small"
-        },
-        {
-          "num": "394",
-          "label": "Testes Unitários",
-          "label_en": "Unit Tests",
-          "icon": "pencil",
-          "size": "small"
-        },
-        {
-          "num": "17",
-          "label": "Tabelas Relacionais",
-          "label_en": "Relational Tables",
+          "num": "27",
+          "label": "Tabelas MySQL",
+          "label_en": "MySQL tables",
           "icon": "database",
+          "size": "small"
+        },
+        {
+          "num": "22",
+          "label": "Unidades geridas",
+          "label_en": "Managed units",
+          "icon": "home",
+          "size": "small"
+        },
+        {
+          "num": "96",
+          "label": "Módulos Python",
+          "label_en": "Python modules",
+          "icon": "code",
           "size": "small"
         }
       ],
       "terminal": [
-        { "type": "cmd", "text": "python main.py --status" },
-        { "type": "out", "text": "<span class=\"term-dim\"># Sistema de Gestão de Alojamento — Porto</span>" },
-        { "type": "out", "text": "" },
-        { "type": "ok",  "text": "✓ A inicializar módulos..." },
-        { "type": "ok",  "text": "✓ Base de dados MySQL conectada (22 unidades)" },
-        { "type": "ok",  "text": "✓ Camada SQLite local sincronizada" },
-        { "type": "ok",  "text": "✓ Interface CustomTkinter carregada" },
-        { "type": "out", "text": "" },
-        { "type": "out", "text": "<span class=\"term-key\">Estado atual:</span>" },
-        { "type": "out", "text": "  Unidades totais ............ <span class=\"term-val\">22</span>" },
-        { "type": "out", "text": "  Ocupação atual ............ <span class=\"term-val\">18 / 22 (82%)</span>" },
-        { "type": "out", "text": "  Contratos ativos .......... <span class=\"term-val\">24</span>" },
-        { "type": "out", "text": "  Reservas Airbnb ........... <span class=\"term-val\">6</span>" },
-        { "type": "out", "text": "  Receita do mês ............ <span class=\"term-val\">€ 6 240</span>" },
-        { "type": "out", "text": "  Alertas de stock .......... <span class=\"term-warn\">2</span>" },
-        { "type": "out", "text": "" },
-        { "type": "ok",  "text": "✓ Testes: 394 passaram / 0 falharam" }
+        {
+          "type": "cmd",
+          "text": "python src/main_gui.py"
+        },
+        {
+          "type": "out",
+          "text": "<span class=\"term-dim\"># Hostel Clean v1.8.0 — Sistema de Gestão de Alojamento</span>"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "ok",
+          "text": "✓ Túnel SSH aberto para a VM · MySQL responde"
+        },
+        {
+          "type": "ok",
+          "text": "✓ Backup diário criado (mysqldump)"
+        },
+        {
+          "type": "ok",
+          "text": "✓ Migrações da base de dados em dia"
+        },
+        {
+          "type": "ok",
+          "text": "✓ Login com bloqueio por tentativas falhadas"
+        },
+        {
+          "type": "ok",
+          "text": "✓ Interface CustomTkinter carregada"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "out",
+          "text": "<span class=\"term-key\">Projeto:</span>"
+        },
+        {
+          "type": "out",
+          "text": "  Unidades geridas ........... <span class=\"term-val\">22</span>"
+        },
+        {
+          "type": "out",
+          "text": "  Tabelas MySQL .............. <span class=\"term-val\">27</span>"
+        },
+        {
+          "type": "out",
+          "text": "  Módulos Python ............. <span class=\"term-val\">96</span>"
+        },
+        {
+          "type": "out",
+          "text": "  Ecrãs da interface ......... <span class=\"term-val\">11 áreas</span>"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "cmd",
+          "text": "python -m unittest discover -s testes"
+        },
+        {
+          "type": "out",
+          "text": "Ran 1181 tests"
+        },
+        {
+          "type": "ok",
+          "text": "✓ OK — 1181 passaram / 0 falharam"
+        }
       ],
-      "link": "https://github.com/Mauriciopates/hostel_gestao"
+      "link": "https://github.com/Mauriciopates/hostel_gestao",
+      "video": "videos/hostel.mp4",
+      "chapter": 3.8,
+      "langs": [
+        "Python",
+        "CustomTkinter",
+        "MySQL",
+        "Matplotlib",
+        "fpdf2",
+        "openpyxl",
+        "unittest"
+      ],
+      "short": "22 unidades em regime mensal e Airbnb: contratos, reservas, stock, despesas, financeiro e relatórios.",
+      "short_en": "22 units, monthly and Airbnb: contracts, bookings, stock, expenses, finance and reports.",
+      "poster": "videos/posters/hostel.jpg",
+      "video_featured": "videos/hostel-destaque.mp4"
+    },
+    {
+      "id": "bds",
+      "name": "Loja online BDS · Blue Digital Store",
+      "name_en": "BDS · Blue Digital Store online shop",
+      "tags": "HTML5 · CSS3 · JavaScript · Three.js",
+      "year": "2026",
+      "category": "Web (Frontend)",
+      "category_en": "Web (Frontend)",
+      "desc": "Protótipo do novo site da Blue Digital Store (personalização têxtil, Rio Tinto): catálogo com filtros, personalizador de produto com cor, técnica e posição do logótipo, visualização 3D com Three.js, tabela de preços por quantidade, assistente que transforma um pedido escrito numa proposta com preço e prazo, e carrinho de orçamento. Trabalho final da UFCD 00604 (Programação para a Web — Client-Side).",
+      "desc_en": "Prototype of the new Blue Digital Store website (textile personalization, Rio Tinto): filterable catalog, product customizer with colour, technique and logo position, 3D preview with Three.js, quantity price table, an assistant that turns a written request into a quote with price and lead time, and a quote cart. Final project for UFCD 00604 (Client-Side Web Programming).",
+      "stack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Three.js"
+      ],
+      "langs": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Three.js"
+      ],
+      "short": "Catálogo, personalizador com pré-visualização 3D, preços por quantidade e assistente de orçamento.",
+      "short_en": "Catalog, customizer with 3D preview, quantity pricing and a quote assistant.",
+      "video": "videos/bds.mp4",
+      "poster": "videos/posters/bds.jpg",
+      "chapter": 8.8,
+      "link": "https://github.com/Mauriciopates/bds_prototipo",
+      "demo": "https://mauriciopates.github.io/bds_prototipo/"
     },
     {
       "id": "siape",
@@ -94,34 +270,106 @@
       "name_en": "SIAPE Data Pipeline",
       "tags": "Python · MySQL · ETL · Tkinter",
       "year": "2025",
-      "category": "ETL / Automação",
-      "category_en": "ETL / Automation",
+      "category": "Automação / ETL",
+      "category_en": "Automation / ETL",
       "image": "img/proj-siape.png",
       "desc": "Pipeline de ETL que extrai dados públicos do Portal da Transparência (governo brasileiro), normaliza e carrega para MySQL remoto. Interface gráfica em Tkinter com passos sequenciais (conexão, download, descompactação, envio, verificação e limpeza) e painel de logs em tempo real.",
       "desc_en": "ETL pipeline that extracts public data from the Transparency Portal (Brazilian government), normalizes and loads it into a remote MySQL database. Tkinter GUI with sequential steps (connection, download, decompression, upload, verification and cleanup) and a real-time log panel.",
-      "stack": ["Python", "MySQL", "ETL", "Tkinter"],
+      "stack": [
+        "Python",
+        "MySQL",
+        "ETL",
+        "Tkinter"
+      ],
       "stats": [
-        { "num": "7",      "label": "etapas",   "label_en": "steps" },
-        { "num": "2 805",  "label": "registos", "label_en": "records" },
-        { "num": "1m 42s", "label": "duração",  "label_en": "duration" },
-        { "num": "7",      "label": "tabelas",  "label_en": "tables" }
+        {
+          "num": "7",
+          "label": "etapas",
+          "label_en": "steps"
+        },
+        {
+          "num": "2 805",
+          "label": "registos",
+          "label_en": "records"
+        },
+        {
+          "num": "1m 42s",
+          "label": "duração",
+          "label_en": "duration"
+        },
+        {
+          "num": "7",
+          "label": "tabelas",
+          "label_en": "tables"
+        }
       ],
       "terminal": [
-        { "type": "cmd", "text": "python siape_pipeline.py --mode=full" },
-        { "type": "out", "text": "<span class=\"term-dim\"># Pipeline SIAPE — Portal da Transparência</span>" },
-        { "type": "out", "text": "" },
-        { "type": "ok",  "text": "✓ [1/4] Extração — 2 847 registos obtidos" },
-        { "type": "ok",  "text": "✓ [2/4] Normalização — encoding UTF-8, datas ISO" },
-        { "type": "ok",  "text": "✓ [3/4] Validação — 42 registos inconsistentes removidos" },
-        { "type": "ok",  "text": "✓ [4/4] Carga em MySQL remoto" },
-        { "type": "out", "text": "" },
-        { "type": "out", "text": "  <span class=\"term-key\">Destino:</span> <span class=\"term-val\">mysql://remote-host:3306/siape</span>" },
-        { "type": "out", "text": "  <span class=\"term-key\">Registos inseridos:</span> <span class=\"term-val\">2 805</span>" },
-        { "type": "out", "text": "  <span class=\"term-key\">Tempo total:</span> <span class=\"term-val\">1m 42s</span>" },
-        { "type": "out", "text": "" },
-        { "type": "ok",  "text": "✓ Pipeline concluído sem erros." }
+        {
+          "type": "cmd",
+          "text": "python siape_pipeline.py --mode=full"
+        },
+        {
+          "type": "out",
+          "text": "<span class=\"term-dim\"># Pipeline SIAPE — Portal da Transparência</span>"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "ok",
+          "text": "✓ [1/4] Extração — 2 847 registos obtidos"
+        },
+        {
+          "type": "ok",
+          "text": "✓ [2/4] Normalização — encoding UTF-8, datas ISO"
+        },
+        {
+          "type": "ok",
+          "text": "✓ [3/4] Validação — 42 registos inconsistentes removidos"
+        },
+        {
+          "type": "ok",
+          "text": "✓ [4/4] Carga em MySQL remoto"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "out",
+          "text": "  <span class=\"term-key\">Destino:</span> <span class=\"term-val\">mysql://remote-host:3306/siape</span>"
+        },
+        {
+          "type": "out",
+          "text": "  <span class=\"term-key\">Registos inseridos:</span> <span class=\"term-val\">2 805</span>"
+        },
+        {
+          "type": "out",
+          "text": "  <span class=\"term-key\">Tempo total:</span> <span class=\"term-val\">1m 42s</span>"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "ok",
+          "text": "✓ Pipeline concluído sem erros."
+        }
       ],
-      "link": "https://github.com/Mauriciopates/Database_automation_SIAPE"
+      "link": "https://github.com/Mauriciopates/Database_automation_SIAPE",
+      "video": "videos/siape.mp4",
+      "chapter": 13.8,
+      "langs": [
+        "Python",
+        "Tkinter",
+        "MySQL",
+        "PyMySQL",
+        "ETL"
+      ],
+      "short": "Interface que descarrega, descompacta, normaliza e carrega dados públicos no MySQL.",
+      "short_en": "GUI that downloads, unzips, normalizes and loads public data into MySQL.",
+      "poster": "videos/posters/siape.jpg"
     },
     {
       "id": "cpgf",
@@ -129,34 +377,105 @@
       "name_en": "CPGF / GPGF Automation",
       "tags": "Python · MySQL · CLI",
       "year": "2025",
-      "category": "ETL / Automação",
-      "category_en": "ETL / Automation",
+      "category": "Automação / ETL",
+      "category_en": "Automation / ETL",
       "image": "img/proj-cpgf.png",
       "desc": "Ferramenta CLI em Python para manutenção anual de tabelas CPGF e GPGF — extração, correção, normalização e importação em lote para MySQL. Menu interativo com verificação de integridade entre registos e diagnóstico de ficheiros CSV.",
       "desc_en": "Python CLI tool for annual maintenance of CPGF and GPGF tables — extraction, correction, normalization and batch import into MySQL. Interactive menu with integrity check between records and CSV file diagnostics.",
-      "stack": ["Python", "MySQL", "CLI", "ETL"],
+      "stack": [
+        "Python",
+        "MySQL",
+        "CLI",
+        "ETL"
+      ],
       "stats": [
-        { "num": "8",     "label": "opções",   "label_en": "options" },
-        { "num": "8 431", "label": "registos", "label_en": "records" },
-        { "num": "28s",   "label": "duração",  "label_en": "duration" },
-        { "num": "0",     "label": "erros",    "label_en": "errors" }
+        {
+          "num": "8",
+          "label": "opções",
+          "label_en": "options"
+        },
+        {
+          "num": "8 431",
+          "label": "registos",
+          "label_en": "records"
+        },
+        {
+          "num": "28s",
+          "label": "duração",
+          "label_en": "duration"
+        },
+        {
+          "num": "0",
+          "label": "erros",
+          "label_en": "errors"
+        }
       ],
       "terminal": [
-        { "type": "cmd", "text": "./cpgf_automation_cli --year=2024 --import" },
-        { "type": "out", "text": "<span class=\"term-dim\"># Automação CPGF/GPGF — manutenção anual</span>" },
-        { "type": "out", "text": "" },
-        { "type": "ok",  "text": "✓ Ano selecionado: 2024" },
-        { "type": "ok",  "text": "✓ Ficheiros CSV encontrados: 12" },
-        { "type": "ok",  "text": "✓ Validação de cabeçalhos: OK" },
-        { "type": "ok",  "text": "✓ Importação em lote para MySQL" },
-        { "type": "out", "text": "" },
-        { "type": "out", "text": "  <span class=\"term-key\">Tabela:</span> <span class=\"term-val\">cpgf_2024</span>" },
-        { "type": "out", "text": "  <span class=\"term-key\">Registos importados:</span> <span class=\"term-val\">8 431</span>" },
-        { "type": "out", "text": "  <span class=\"term-key\">Duplicados ignorados:</span> <span class=\"term-val\">17</span>" },
-        { "type": "out", "text": "" },
-        { "type": "ok",  "text": "✓ Integridade verificada. Nenhuma inconsistência." }
+        {
+          "type": "cmd",
+          "text": "./cpgf_automation_cli --year=2024 --import"
+        },
+        {
+          "type": "out",
+          "text": "<span class=\"term-dim\"># Automação CPGF/GPGF — manutenção anual</span>"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "ok",
+          "text": "✓ Ano selecionado: 2024"
+        },
+        {
+          "type": "ok",
+          "text": "✓ Ficheiros CSV encontrados: 12"
+        },
+        {
+          "type": "ok",
+          "text": "✓ Validação de cabeçalhos: OK"
+        },
+        {
+          "type": "ok",
+          "text": "✓ Importação em lote para MySQL"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "out",
+          "text": "  <span class=\"term-key\">Tabela:</span> <span class=\"term-val\">cpgf_2024</span>"
+        },
+        {
+          "type": "out",
+          "text": "  <span class=\"term-key\">Registos importados:</span> <span class=\"term-val\">8 431</span>"
+        },
+        {
+          "type": "out",
+          "text": "  <span class=\"term-key\">Duplicados ignorados:</span> <span class=\"term-val\">17</span>"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "ok",
+          "text": "✓ Integridade verificada. Nenhuma inconsistência."
+        }
       ],
-      "link": "https://github.com/Mauriciopates/Database_automation_GPGF"
+      "link": "https://github.com/Mauriciopates/Database_automation_GPGF",
+      "video": "videos/cpgf.mp4",
+      "chapter": 18.8,
+      "langs": [
+        "Python",
+        "Pandas",
+        "MySQL",
+        "CLI"
+      ],
+      "short": "Menu de terminal para manutenção anual: correção de CSV, diagnóstico e importação em lote.",
+      "short_en": "Terminal menu for yearly maintenance: CSV fixes, diagnostics and batch import.",
+      "poster": "videos/posters/cpgf.jpg"
     },
     {
       "id": "relatorios",
@@ -164,36 +483,114 @@
       "name_en": "Security Reports",
       "tags": "Python · Tkinter · Matplotlib",
       "year": "2025",
-      "category": "Python / Dados",
-      "category_en": "Python / Data",
+      "category": "Aplicações Desktop",
+      "category_en": "Desktop Apps",
       "image": "img/proj-relatorios.png",
       "desc": "Aplicação desktop para análise de logs de segurança com interface Tkinter. Apresenta dashboards com totais de eventos, críticos, avisos e utilizadores, permitindo consulta geral, detalhe por módulo, análise temporal e listagem por utilizador. Distribuída como executável único via PyInstaller.",
       "desc_en": "Desktop application for security log analysis with a Tkinter interface. Displays dashboards with totals of events, criticals, warnings and users, allowing general queries, per-module detail, temporal analysis and per-user listing. Distributed as a single executable via PyInstaller.",
-      "stack": ["Python", "Tkinter", "Matplotlib", "PyInstaller"],
+      "stack": [
+        "Python",
+        "Tkinter",
+        "Matplotlib",
+        "PyInstaller"
+      ],
       "stats": [
-        { "num": "10 502", "label": "eventos",    "label_en": "events" },
-        { "num": "5 362",  "label": "críticos",   "label_en": "critical" },
-        { "num": "4",      "label": "módulos",    "label_en": "modules" },
-        { "num": "28 MB",  "label": "executável", "label_en": "executable" }
+        {
+          "num": "10 502",
+          "label": "eventos",
+          "label_en": "events"
+        },
+        {
+          "num": "5 362",
+          "label": "críticos",
+          "label_en": "critical"
+        },
+        {
+          "num": "4",
+          "label": "módulos",
+          "label_en": "modules"
+        },
+        {
+          "num": "28 MB",
+          "label": "executável",
+          "label_en": "executable"
+        }
       ],
       "terminal": [
-        { "type": "cmd", "text": "pyinstaller --onefile --windowed relatorios.py" },
-        { "type": "out", "text": "<span class=\"term-dim\"># Build do executável — Relatórios de Segurança</span>" },
-        { "type": "out", "text": "" },
-        { "type": "out", "text": "  <span class=\"term-key\">INFO:</span> PyInstaller: 6.x" },
-        { "type": "out", "text": "  <span class=\"term-key\">INFO:</span> Python: 3.11" },
-        { "type": "out", "text": "  <span class=\"term-key\">INFO:</span> Platform: Windows-10" },
-        { "type": "out", "text": "" },
-        { "type": "ok",  "text": "✓ Análise de dependências concluída" },
-        { "type": "ok",  "text": "✓ Módulos Matplotlib e Tkinter empacotados" },
-        { "type": "ok",  "text": "✓ Ficheiros binários gerados" },
-        { "type": "out", "text": "" },
-        { "type": "out", "text": "  <span class=\"term-key\">Output:</span> <span class=\"term-val\">dist/security_reports.exe</span>" },
-        { "type": "out", "text": "  <span class=\"term-key\">Tamanho:</span> <span class=\"term-val\">28.4 MB</span>" },
-        { "type": "out", "text": "" },
-        { "type": "ok",  "text": "✓ Build concluído com sucesso." }
+        {
+          "type": "cmd",
+          "text": "pyinstaller --onefile --windowed relatorios.py"
+        },
+        {
+          "type": "out",
+          "text": "<span class=\"term-dim\"># Build do executável — Relatórios de Segurança</span>"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "out",
+          "text": "  <span class=\"term-key\">INFO:</span> PyInstaller: 6.x"
+        },
+        {
+          "type": "out",
+          "text": "  <span class=\"term-key\">INFO:</span> Python: 3.11"
+        },
+        {
+          "type": "out",
+          "text": "  <span class=\"term-key\">INFO:</span> Platform: Windows-10"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "ok",
+          "text": "✓ Análise de dependências concluída"
+        },
+        {
+          "type": "ok",
+          "text": "✓ Módulos Matplotlib e Tkinter empacotados"
+        },
+        {
+          "type": "ok",
+          "text": "✓ Ficheiros binários gerados"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "out",
+          "text": "  <span class=\"term-key\">Output:</span> <span class=\"term-val\">dist/security_reports.exe</span>"
+        },
+        {
+          "type": "out",
+          "text": "  <span class=\"term-key\">Tamanho:</span> <span class=\"term-val\">28.4 MB</span>"
+        },
+        {
+          "type": "out",
+          "text": ""
+        },
+        {
+          "type": "ok",
+          "text": "✓ Build concluído com sucesso."
+        }
       ],
-      "link": "https://github.com/Mauriciopates/Projeto_seguranca"
+      "link": "https://github.com/Mauriciopates/Projeto_seguranca",
+      "video": "videos/relatorios.mp4",
+      "chapter": 23.8,
+      "langs": [
+        "Python",
+        "Tkinter",
+        "Matplotlib",
+        "ReportLab",
+        "PyInstaller"
+      ],
+      "short": "Lê +10 mil eventos de log e gera dashboards, gráficos e relatórios PDF/CSV.",
+      "short_en": "Reads 10k+ log events and builds dashboards, charts and PDF/CSV reports.",
+      "poster": "videos/posters/relatorios.jpg"
     },
     {
       "id": "curiosidades",
@@ -206,14 +603,45 @@
       "image": "img/proj-curiosidades.png",
       "desc": "Aplicação web interativa que revela curiosidades progressivamente com animações suaves de entrada. Interface minimalista com botão de revelação sequencial, feedback visual por passos e design responsivo em tema claro.",
       "desc_en": "Interactive web app that progressively reveals curiosities with smooth entry animations. Minimalist interface with a sequential reveal button, step-by-step visual feedback and a responsive light-theme design.",
-      "stack": ["HTML5", "CSS3", "JavaScript"],
-      "stats": [
-        { "num": "3",    "label": "curiosidades", "label_en": "curiosities" },
-        { "num": "1",    "label": "botão",        "label_en": "button" },
-        { "num": "100%", "label": "responsivo",   "label_en": "responsive" },
-        { "num": "0",    "label": "dependências", "label_en": "dependencies" }
+      "stack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
       ],
-      "link": "https://mauriciopates.github.io/CV_Html/Projetos_html/Curiosidades_ocultas/curiosidade.html"
+      "stats": [
+        {
+          "num": "3",
+          "label": "curiosidades",
+          "label_en": "curiosities"
+        },
+        {
+          "num": "1",
+          "label": "botão",
+          "label_en": "button"
+        },
+        {
+          "num": "100%",
+          "label": "responsivo",
+          "label_en": "responsive"
+        },
+        {
+          "num": "0",
+          "label": "dependências",
+          "label_en": "dependencies"
+        }
+      ],
+      "link": "https://github.com/Mauriciopates/portfolio/tree/main/Projetos_html/Curiosidades_ocultas",
+      "video": "videos/curiosidades.mp4",
+      "chapter": 28.8,
+      "langs": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "demo": "Projetos_html/Curiosidades_ocultas/curiosidade.html",
+      "short": "Revelação progressiva de curiosidades com transições suaves em CSS.",
+      "short_en": "Progressive reveal of facts with smooth CSS transitions.",
+      "poster": "videos/posters/curiosidades.jpg"
     },
     {
       "id": "adivinha",
@@ -226,17 +654,47 @@
       "image": "img/proj-adivinha.png",
       "desc": "Jogo interativo onde o utilizador tenta adivinhar o número secreto entre 1 e 50. Feedback dinâmico de dicas (acima/abaixo), contador de tentativas, modo escuro alternável e botão de reinício após cada ronda. Toda a lógica em JavaScript puro.",
       "desc_en": "Interactive game where the user tries to guess the secret number between 1 and 50. Dynamic hint feedback (higher/lower), attempt counter, toggleable dark mode and a restart button after each round. All logic in pure JavaScript.",
-      "stack": ["HTML5", "CSS3", "JavaScript"],
-      "stats": [
-        { "num": "50", "label": "números",      "label_en": "numbers" },
-        { "num": "1",  "label": "CPU",          "label_en": "CPU" },
-        { "num": "2",  "label": "temas",        "label_en": "themes" },
-        { "num": "0",  "label": "dependências", "label_en": "dependencies" }
+      "stack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
       ],
-      "link": "https://mauriciopates.github.io/CV_Html/Projetos_html/Jogo_adivinha/adivinha.html"
+      "stats": [
+        {
+          "num": "50",
+          "label": "números",
+          "label_en": "numbers"
+        },
+        {
+          "num": "1",
+          "label": "CPU",
+          "label_en": "CPU"
+        },
+        {
+          "num": "2",
+          "label": "temas",
+          "label_en": "themes"
+        },
+        {
+          "num": "0",
+          "label": "dependências",
+          "label_en": "dependencies"
+        }
+      ],
+      "link": "https://github.com/Mauriciopates/portfolio/tree/main/Projetos_html/Jogo_adivinha",
+      "video": "videos/adivinha.mp4",
+      "chapter": 33.8,
+      "langs": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "demo": "Projetos_html/Jogo_adivinha/adivinha.html",
+      "short": "Jogo com dicas acima/abaixo, contador de tentativas e modo escuro.",
+      "short_en": "Game with higher/lower hints, attempt counter and dark mode.",
+      "poster": "videos/posters/adivinha.jpg"
     }
   ],
-
   "formacao": [
     {
       "date": "abr 2026 – mai 2027",
@@ -272,7 +730,6 @@
       "current": false
     }
   ],
-
   "certificados": [
     {
       "name": "Banco de Dados SQL do Zero ao Avançado + Projetos Reais",
@@ -280,7 +737,7 @@
       "issuer": "Udemy",
       "date": "jul 2026",
       "date_en": "Jul 2026",
-      "color": "#3b6cf0",
+      "color": "#16a34a",
       "inicial": "U"
     },
     {
@@ -289,7 +746,7 @@
       "issuer": "Drogarias Campeã",
       "date": "out 2021",
       "date_en": "Oct 2021",
-      "color": "#5a85ff",
+      "color": "#22c55e",
       "inicial": "DC"
     },
     {
@@ -298,7 +755,7 @@
       "issuer": "Escola Conquer",
       "date": "ago 2021",
       "date_en": "Aug 2021",
-      "color": "#7aa0ff",
+      "color": "#4ade80",
       "inicial": "C"
     },
     {
@@ -307,7 +764,7 @@
       "issuer": "Fundação Getulio Vargas",
       "date": "mai 2020",
       "date_en": "May 2020",
-      "color": "#3b6cf0",
+      "color": "#16a34a",
       "inicial": "FGV"
     },
     {
@@ -316,7 +773,7 @@
       "issuer": "Fundação Getulio Vargas",
       "date": "abr 2020",
       "date_en": "Apr 2020",
-      "color": "#5a85ff",
+      "color": "#22c55e",
       "inicial": "FGV"
     },
     {
@@ -325,7 +782,7 @@
       "issuer": "Fundação Bradesco",
       "date": "jul 2019",
       "date_en": "Jul 2019",
-      "color": "#7aa0ff",
+      "color": "#4ade80",
       "inicial": "FB"
     },
     {
@@ -334,8 +791,15 @@
       "issuer": "Instituto Brasileiro de Coaching — IBC",
       "date": "ago 2018",
       "date_en": "Aug 2018",
-      "color": "#3b6cf0",
+      "color": "#16a34a",
       "inicial": "IBC"
     }
-  ]
+  ],
+  "showreel": {
+    "video": "videos/showreel.mp4",
+    "webm": "videos/showreel.webm",
+    "poster": "videos/posters/showreel.jpg",
+    "intro": 0,
+    "outro": 38.8
+  }
 }

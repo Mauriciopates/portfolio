@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
    MAURÍCIO PATES · PORTFÓLIO TÉCNICO
-   script.js — v10 (só 1 stat big + 3 small, sem chevrons)
+   script.js — v11 (showreel interativo + grelha de projetos em vídeo)
    ═══════════════════════════════════════════════════════════════ */
 
 'use strict';
@@ -93,18 +93,21 @@ const Data = (() => {
 const I18N = {
   pt: {
     'nav.perfil':'Perfil','nav.projetos':'Projetos','nav.formacao':'Formação','nav.sobre':'Sobre','nav.contacto':'Contacto',
-    'hero.title':'Estudante de Desenvolvimento Fullstack & Dados',
-    'hero.stack':'Python · SQL · Fullstack — Especialista em Sistemas de Informação (TPSI). Pipelines ETL, modelação de dados e desenvolvimento de aplicações.',
-    'hero.projects':'Ver Projetos','hero.badge':'Técnico Esp. TPSI · IEFP Porto',
+    'hero.title':'Desenvolvedor de Software · Automação & Aplicações',
+    'hero.stack':'Crio aplicações desktop, automações e sistemas web — do script que poupa horas de trabalho manual ao sistema de gestão completo. Python · JavaScript · SQL.',
+    'hero.projects':'Ver em ação','hero.badge':'Técnico Esp. TPSI · IEFP Porto',
     'dashboard.tag':'// dashboard','dashboard.title':'Competências técnicas',
     'dashboard.sub':'Stack em desenvolvimento ativo no CET TPSI (IEFP Porto) e aplicada em projetos práticos.',
     'chart.tag':'// distribuição','chart.title':'Projetos por área técnica',
     'projects.tag':'// projetos','projects.highlightTitle':'Projeto em destaque',
-    'projects.highlightSub':'O projeto principal do portfólio, com arquitetura completa e terminal interativo.',
+    'projects.highlightSub':'O projeto principal do portfólio: uma aplicação completa usada no dia a dia, com terminal interativo.',
+    'reel.tag':'// showreel','reel.title':'Os meus projetos em ação',
+    'reel.sub':'Gravações reais das aplicações a funcionar. Escolhe um capítulo para saltar diretamente para o projeto.',
+    'card.repo':'Repositório','card.demo':'Abrir demo','card.reel':'No showreel','card.langs':'Linguagens & tecnologias','filter.all':'Todos',
     'projects.code':'Ver código ↗','projects.process':'Ver processo','projects.processClose':'Fechar processo',
-    'er.tag':'// outros projetos','er.title':'Demais Trabalhos Técnicos',
-    'er.sub.lead':'Esquema relacional dos restantes projetos —',
-    'er.sub.cta':'clica em cada tabela para veres o detalhe.',
+    'er.tag':'// outros projetos','er.title':'Mais projetos',
+    'er.sub.lead':'Automação, aplicações desktop e web —',
+    'er.sub.cta':'passa o rato por um vídeo para o ver a funcionar.',
     'er.close':'Fechar','er.prev':'Projeto anterior','er.next':'Próximo projeto',
     'formacao.tag':'// formação','formacao.title':'Percurso académico & técnico',
     'formacao.sub':'Formação técnica especializada e certificações complementares ao longo dos últimos anos.',
@@ -117,7 +120,7 @@ const I18N = {
     'certs.tag':'// certificações','certs.title':'Certificados complementares',
     'sobre.tag':'// sobre','sobre.title':'Um pouco mais sobre mim',
     'sobre.p1':'Mais de 10 anos em análise de dados comerciais, atualmente em transição para a área tecnológica, unindo a visão prática do setor comercial e o rigor da hotelaria ao desenvolvimento de aplicações modernas. Com foco em Python, bases de dados relacionais e desenvolvimento Web, aplico raciocínio analítico para transformar processos em código funcional e automatizado através do curso TPSI (IEFP Porto).',
-    'sobre.p2':'Construí um sistema de gestão para 22 unidades de alojamento em Python e MySQL, e um pipeline de importação de dados públicos para MySQL — aplicando à programação o mesmo raciocínio analítico da experiência anterior.',
+    'sobre.p2':'Construí um sistema de gestão para 22 unidades de alojamento em Python e MySQL, ferramentas de automação que eliminam tarefas manuais repetitivas, aplicações de análise com gráficos e páginas web interativas — gosto de automatizar o que é repetitivo, não só de trabalhar com dados.',
     'sobre.p3':'Disponível para Formação em Contexto de Trabalho (ECT) a partir de novembro de 2026.',
     'sobre.cv':'Descarregar CV','sobre.local':'Localização','sobre.email':'Email','sobre.formacao':'Formação','sobre.langs':'Idiomas',
     'sobre.langs.value':'PT · EN (leitura/escrita: intermédio · fala: básico)',
@@ -132,18 +135,21 @@ const I18N = {
   },
   en: {
     'nav.perfil':'Profile','nav.projetos':'Projects','nav.formacao':'Education','nav.sobre':'About','nav.contacto':'Contact',
-    'hero.title':'Fullstack Development & Data Analysis Student',
-    'hero.stack':'Python · SQL · Fullstack — Information Systems Specialist (TPSI). ETL pipelines, data modeling and application development.',
-    'hero.projects':'View Projects','hero.badge':'TPSI Specialist · IEFP Porto',
+    'hero.title':'Software Developer · Automation & Applications',
+    'hero.stack':'I build desktop apps, automations and web systems — from the script that saves hours of manual work to a complete management system. Python · JavaScript · SQL.',
+    'hero.projects':'See it in action','hero.badge':'TPSI Specialist · IEFP Porto',
     'dashboard.tag':'// dashboard','dashboard.title':'Technical skills',
     'dashboard.sub':'Stack actively developed during the TPSI course (IEFP Porto) and applied in hands-on projects.',
     'chart.tag':'// distribution','chart.title':'Projects by technical area',
     'projects.tag':'// projects','projects.highlightTitle':'Featured project',
-    'projects.highlightSub':'The portfolio’s flagship project, with full architecture and an interactive terminal.',
+    'projects.highlightSub':'The portfolio’s flagship project: a complete application used day to day, with an interactive terminal.',
+    'reel.tag':'// showreel','reel.title':'My projects in action',
+    'reel.sub':'Real recordings of the applications running. Pick a chapter to jump straight to a project.',
+    'card.repo':'Repository','card.demo':'Open demo','card.reel':'In showreel','card.langs':'Languages & technologies','filter.all':'All',
     'projects.code':'View code ↗','projects.process':'View process','projects.processClose':'Close process',
-    'er.tag':'// other projects','er.title':'Other Technical Work',
-    'er.sub.lead':'Relational schema of the remaining projects —',
-    'er.sub.cta':'click each table to see the details.',
+    'er.tag':'// other projects','er.title':'More projects',
+    'er.sub.lead':'Automation, desktop apps and web —',
+    'er.sub.cta':'hover a video to see it running.',
     'er.close':'Close','er.prev':'Previous project','er.next':'Next project',
     'formacao.tag':'// education','formacao.title':'Academic & technical path',
     'formacao.sub':'Specialized technical training and complementary certifications over recent years.',
@@ -156,7 +162,7 @@ const I18N = {
     'certs.tag':'// certifications','certs.title':'Complementary certificates',
     'sobre.tag':'// about','sobre.title':'A bit more about me',
     'sobre.p1':'Over 10 years in commercial data analysis, currently transitioning into tech — combining hands-on commercial and hospitality experience with modern application development. With a focus on Python, relational databases and web development, I apply analytical thinking to turn processes into functional, automated code through the TPSI course (IEFP Porto).',
-    'sobre.p2':'I built a management system for 22 accommodation units in Python and MySQL, plus a public data import pipeline to MySQL — applying to programming the same analytical thinking from my previous experience.',
+    'sobre.p2':'I built a management system for 22 accommodation units in Python and MySQL, automation tools that remove repetitive manual tasks, analysis apps with charts and interactive web pages — I enjoy automating what is repetitive, not just working with data.',
     'sobre.p3':'Available for Work Context Training (ECT) from November 2026.',
     'sobre.cv':'Download CV','sobre.local':'Location','sobre.email':'Email','sobre.formacao':'Education','sobre.langs':'Languages',
     'sobre.langs.value':'PT · EN (reading/writing: intermediate · speaking: basic)',
@@ -354,7 +360,7 @@ const Chart = (() => {
         <circle class="ring-bg" cx="50" cy="50" r="${R}"/>
         ${segs}
         <text class="ring-center-num" x="50" y="49">${total}</text>
-        <text class="ring-center-lbl" x="50" y="60">projetos</text>
+        <text class="ring-center-lbl" x="50" y="60">${Lang.current() === 'en' ? 'projects' : 'projetos'}</text>
       </svg>
       <div class="chart-legend">${legend}</div>`;
     wrap.querySelectorAll('.ring-seg').forEach(seg => {
@@ -426,7 +432,12 @@ const Projects = (() => {
       ? `<img src="${proj.image_secondary}" alt="${field(proj, 'name')} — extra" loading="lazy" onerror="this.style.display='none'">`
       : '';
 
-    const mediaHtml = hasSecondary
+    const mediaHtml = proj.video
+      ? `<div class="project-block-media project-block-video">
+           <div class="media-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="media-bar-title">${field(proj, 'name')} — demonstração</span></div>
+           <video muted loop playsinline autoplay preload="metadata" poster="${proj.poster || ''}"><source src="${proj.video_featured || proj.video}" type="video/mp4"><source src="${(proj.video_featured || proj.video).replace(/\.mp4$/, '.webm')}" type="video/webm"></video>
+         </div>`
+      : hasSecondary
       ? `<div class="project-block-media-stack">
            <div class="project-block-media">${hasImage}</div>
            <div class="project-block-media project-block-media-secondary">${secondaryImage}</div>
@@ -453,6 +464,23 @@ const Projects = (() => {
              <div class="terminal-body" id="terminal-body-${proj.id}"></div>
            </div>
          </div>` : '';
+
+    if (proj.video) {
+      return `
+      <article class="project-block is-video-top visible" data-project="${proj.id}">
+        ${mediaHtml}
+        <div class="project-block-body featured-split">
+          <div class="fs-main">
+            <h3 class="project-block-title">${field(proj, 'name')}</h3>
+            <div class="project-block-desc">${field(proj, 'desc')}</div>
+            <div class="project-block-tags">${tags}</div>
+            <div class="project-block-actions">${link}${processBtn}</div>
+          </div>
+          ${stats ? `<div class="fs-side"><div class="project-block-stats">${stats}</div></div>` : ''}
+        </div>
+        ${terminalBlock}
+      </article>`;
+    }
 
     return `
       <article class="project-block visible" data-project="${proj.id}">
@@ -482,308 +510,163 @@ const Projects = (() => {
     });
   }
 
-  const ROW_LABELS = {
-    pt: { name: 'nome', stack: 'stack', year: 'ano',  category: 'categoria_id', link: 'link' },
-    en: { name: 'name', stack: 'stack', year: 'year', category: 'category_id',  link: 'link' }
-  };
-  function rowLabel(key) {
-    const lang = (window.Lang && Lang.current) ? Lang.current() : 'pt';
-    return (ROW_LABELS[lang] || ROW_LABELS.pt)[key];
+  /* ── GRELHA DE PROJETOS EM VÍDEO (substitui o antigo diagrama ER) ── */
+  let gridProjects = [];
+  let activeFilter = 'all';
+
+  function t(key, fallback) {
+    const d = I18N[Lang.current()] || I18N.pt;
+    return d[key] || fallback || key;
   }
 
-  function buildTableSpec(proj) {
-    return {
-      id: proj.id,
-      name: field(proj, 'name'),
-      category: field(proj, 'category'),
-      year: proj.year || '',
-      image: proj.image,
-      tableName: proj.id,
-      badge: proj.category === 'ETL / Automação' ? 'ETL' : 'PK',
-      desc: field(proj, 'desc'),
-      stack: proj.stack || [],
-      link: proj.link || '',
-      rows: [
-        { key: 'PK', name: 'id',                    type: 'int' },
-        { key: '',   name: rowLabel('name'),        type: 'varchar' },
-        { key: '',   name: rowLabel('stack'),       type: 'varchar[]' },
-        { key: '',   name: rowLabel('year'),        type: 'year' },
-        { key: 'FK', name: rowLabel('category'),    type: 'int' },
-        { key: '',   name: rowLabel('link'),        type: 'url' }
-      ]
-    };
+  function videoSources(src) {
+    if (!src) return '';
+    const webm = src.replace(/\.mp4$/i, '.webm');
+    return `<source src="${src}" type="video/mp4"><source src="${webm}" type="video/webm">`;
   }
 
-  function renderErNode(spec, index) {
-    const rows = spec.rows.map(r => `
-      <div class="er-row">
-        <span class="er-row-key">${r.key || ''}</span>
-        <span class="er-row-name">${r.name}</span>
-        <span class="er-row-type">${r.type}</span>
-      </div>`).join('');
-    const stackTags = spec.stack.map(t => `<span class="tag">${t}</span>`).join('');
-    const linkBtn = (spec.link && spec.link !== '#')
-      ? `<a href="${spec.link}" target="_blank" rel="noopener" class="btn btn-primary"><span data-i18n="projects.code">Ver código ↗</span></a>` : '';
+  function langChips(proj) {
+    return (proj.langs || proj.stack || []).map(l => `<span class="lang-chip">${l}</span>`).join('');
+  }
+
+  function cardHtml(proj, index) {
+    const repo = (proj.link && proj.link !== '#')
+      ? `<a href="${proj.link}" target="_blank" rel="noopener" class="card-btn card-btn-primary" onclick="event.stopPropagation()">
+           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0023.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
+           <span>${t('card.repo', 'Repositório')}</span></a>` : '';
+    const demo = proj.demo
+      ? `<a href="${proj.demo}" target="_blank" rel="noopener" class="card-btn" onclick="event.stopPropagation()"><span>${t('card.demo', 'Abrir demo')} ↗</span></a>` : '';
     return `
-      <div class="er-node" data-node-id="${spec.id}" data-index="${index}" tabindex="0" role="button" aria-expanded="false">
-        <div class="er-node-header">
-          <span class="er-node-title">${spec.tableName}</span>
-          <span class="er-node-badge">${spec.badge}</span>
+      <article class="proj-card reveal" data-id="${proj.id}" data-cat="${proj.category}" data-index="${index}" tabindex="0" style="--d:${index * 90}ms">
+        <div class="proj-media">
+          <video class="proj-video" muted loop playsinline preload="none" poster="${proj.poster || ''}" data-src="${proj.video || ''}">${videoSources(proj.video)}</video>
+          <span class="proj-cat">${field(proj, 'category')}</span>
+          <span class="proj-expand" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+          </span>
+          <div class="proj-progress"><div></div></div>
         </div>
-        <div class="er-node-body">
-          <div class="er-node-rows">${rows}</div>
-          <div class="er-node-detail">
-            <button class="er-detail-close" type="button" aria-label="Fechar" data-er-close>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-              </svg>
+        <div class="proj-body">
+          <div class="proj-head">
+            <h3 class="proj-title">${field(proj, 'name')}</h3>
+            <span class="proj-year">${proj.year || ''}</span>
+          </div>
+          <p class="proj-desc">${field(proj, 'short') || ''}</p>
+          <div class="proj-langs">
+            <span class="proj-langs-lbl">${t('card.langs', 'Linguagens & tecnologias')}</span>
+            <div class="proj-langs-list">${langChips(proj)}</div>
+          </div>
+          <div class="proj-actions">${repo}${demo}
+            <button type="button" class="card-btn card-btn-ghost" data-chapter="${proj.chapter != null ? proj.chapter : ''}" onclick="event.stopPropagation()">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20 7 4"/></svg><span>${t('card.reel', 'No showreel')}</span>
             </button>
-            <h3 class="er-detail-title">${spec.name}</h3>
-            <span class="er-detail-meta">${spec.year} · ${spec.category}</span>
-            <img class="er-detail-img" src="${spec.image}" alt="${spec.name}" loading="lazy" onerror="this.style.display='none'">
-            <p class="er-detail-desc">${spec.desc}</p>
-            <div class="er-detail-stack">${stackTags}</div>
-            <div class="er-detail-actions">${linkBtn}</div>
-            <div class="er-detail-nav">
-              <button class="er-nav-btn" type="button" data-er-prev aria-label="Anterior" ${index === 0 ? 'disabled' : ''}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-              </button>
-              <button class="er-nav-btn" type="button" data-er-next aria-label="Próximo" ${index === erProjects.length - 1 ? 'disabled' : ''}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-              </button>
-            </div>
           </div>
         </div>
-      </div>`;
+      </article>`;
   }
 
-  async function renderEr() {
-    const el = $('#erDiagram');
-    if (!el) return;
-    const json = await Data.load();
-    const projects = json.projects || [];
-    const rest = projects.slice(1);
-    if (!rest.length) return;
-    const specs = rest.map(buildTableSpec);
-    el.innerHTML = specs.map(renderErNode).join('');
-    bindErEvents();
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      drawErConnections();
-      drawFeaturedToEr();
+  function renderFilter() {
+    const bar = $('#projFilter');
+    if (!bar) return;
+    const cats = [];
+    gridProjects.forEach(p => { if (!cats.find(c => c.pt === p.category)) cats.push({ pt: p.category, label: field(p, 'category') }); });
+    bar.innerHTML = [`<button type="button" class="filter-btn${activeFilter === 'all' ? ' active' : ''}" data-filter="all">${t('filter.all', 'Todos')}</button>`]
+      .concat(cats.map(c => `<button type="button" class="filter-btn${activeFilter === c.pt ? ' active' : ''}" data-filter="${c.pt}">${c.label}</button>`)).join('');
+    bar.querySelectorAll('.filter-btn').forEach(b => b.addEventListener('click', () => {
+      activeFilter = b.dataset.filter;
+      bar.querySelectorAll('.filter-btn').forEach(x => x.classList.toggle('active', x === b));
+      $$('.proj-card').forEach(card => {
+        const show = activeFilter === 'all' || card.dataset.cat === activeFilter;
+        card.classList.toggle('is-hidden', !show);
+      });
     }));
   }
 
-  function bindErEvents() {
-    const wrap = $('#erDiagram');
-    if (!wrap) return;
-    if (wrap._hasClickBinding) return;
-    wrap._hasClickBinding = true;
+  async function renderGrid() {
+    const grid = $('#projGrid');
+    if (!grid) return;
+    const json = await Data.load();
+    gridProjects = (json.projects || []).slice(1).filter(p => p.video);
+    grid.innerHTML = gridProjects.map(cardHtml).join('');
+    renderFilter();
+    bindGrid(grid);
+  }
 
-    wrap.addEventListener('click', (e) => {
-      if (e.target.closest('[data-er-close]')) { e.stopPropagation(); collapseErNode(); return; }
-      if (e.target.closest('[data-er-prev]')) { e.stopPropagation(); if (activeErIndex > 0) expandErNode(activeErIndex - 1); return; }
-      if (e.target.closest('[data-er-next]')) { e.stopPropagation(); if (activeErIndex < erProjects.length - 1) expandErNode(activeErIndex + 1); return; }
-      if (e.target.closest('a')) return;
-      if (e.target.closest('.er-node.expanded')) return;
-      const node = e.target.closest('.er-node');
-      if (node && !node.classList.contains('expanded')) {
-        const idx = parseInt(node.dataset.index, 10);
-        if (!isNaN(idx)) expandErNode(idx);
+  function bindGrid(grid) {
+    const cards = $$('.proj-card', grid);
+    const canHover = window.matchMedia('(hover: hover)').matches;
+
+    cards.forEach(card => {
+      const v = $('.proj-video', card);
+      const bar = $('.proj-progress div', card);
+      v.addEventListener('timeupdate', () => { if (v.duration) bar.style.width = (v.currentTime / v.duration * 100) + '%'; });
+      const play = () => { v.preload = 'auto'; const p = v.play(); if (p && p.catch) p.catch(() => {}); card.classList.add('playing'); };
+      const stop = () => { v.pause(); card.classList.remove('playing'); };
+      card._play = play; card._stop = stop;
+      if (canHover) {
+        card.addEventListener('mouseenter', play);
+        card.addEventListener('mouseleave', stop);
       }
-    });
-
-    wrap.addEventListener('keydown', (e) => {
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      const node = e.target.closest('.er-node');
-      if (!node || node.classList.contains('expanded')) return;
-      e.preventDefault();
-      const idx = parseInt(node.dataset.index, 10);
-      if (!isNaN(idx)) expandErNode(idx);
-    });
-
-    if (!wrap._hasEscListener) {
-      wrap._hasEscListener = true;
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && activeErIndex >= 0) collapseErNode();
+      // efeito 3D suave a seguir o rato
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.setProperty('--rx', (y * -5) + 'deg');
+        card.style.setProperty('--ry', (x * 6) + 'deg');
+        card.style.setProperty('--mx', ((x + 0.5) * 100) + '%');
+        card.style.setProperty('--my', ((y + 0.5) * 100) + '%');
       });
+      card.addEventListener('mouseleave', () => { card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); });
+      card.addEventListener('click', () => openModal(gridProjects[+card.dataset.index]));
+      card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(gridProjects[+card.dataset.index]); } });
+      const chap = card.querySelector('[data-chapter]');
+      if (chap) chap.addEventListener('click', () => Showreel.goTo(parseFloat(chap.dataset.chapter)));
+    });
+
+    // Em ecrãs táteis (sem hover) os vídeos tocam sozinhos quando aparecem no ecrã
+    if (!canHover && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => { const c = en.target; if (en.isIntersecting) c._play(); else c._stop(); });
+      }, { threshold: 0.6 });
+      cards.forEach(c => io.observe(c));
     }
   }
 
-  function expandErNode(index) {
-    const wrap = $('#erDiagram');
-    if (!wrap) return;
-    wrap.querySelectorAll('.er-node').forEach(n => {
-      n.classList.remove('expanded');
-      n.setAttribute('aria-expanded', 'false');
-    });
-    const target = wrap.querySelector(`.er-node[data-index="${index}"]`);
-    if (!target) return;
-    target.classList.add('expanded');
-    target.setAttribute('aria-expanded', 'true');
-    wrap.classList.add('has-expanded');
-    activeErIndex = index;
-    setTimeout(() => { drawErConnections(); drawFeaturedToEr(); }, 420);
-    setTimeout(() => {
-      const rect = target.getBoundingClientRect();
-      const topOK = rect.top >= 80;
-      const bottomOK = rect.bottom <= window.innerHeight + 40;
-      if (!topOK || !bottomOK) {
-        const y = window.scrollY + rect.top - 110;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    }, 90);
+  /* ── Modal de vídeo em grande ── */
+  let lastFocus = null;
+  function openModal(proj) {
+    if (!proj) return;
+    const m = $('#vmodal'), v = $('#vmodalVideo'), info = $('#vmodalInfo');
+    lastFocus = document.activeElement;
+    v.innerHTML = videoSources(proj.video);
+    v.poster = proj.poster || '';
+    v.load();
+    const repo = (proj.link && proj.link !== '#') ? `<a href="${proj.link}" target="_blank" rel="noopener" class="card-btn card-btn-primary"><span>${t('card.repo', 'Repositório')} ↗</span></a>` : '';
+    const demo = proj.demo ? `<a href="${proj.demo}" target="_blank" rel="noopener" class="card-btn"><span>${t('card.demo', 'Abrir demo')} ↗</span></a>` : '';
+    info.innerHTML = `
+      <span class="vmodal-cat">${field(proj, 'category')} · ${proj.year || ''}</span>
+      <h3>${field(proj, 'name')}</h3>
+      <div class="vmodal-desc">${field(proj, 'desc')}</div>
+      <span class="proj-langs-lbl">${t('card.langs', 'Linguagens & tecnologias')}</span>
+      <div class="proj-langs-list">${langChips(proj)}</div>
+      <div class="proj-actions">${repo}${demo}</div>`;
+    m.classList.add('open'); m.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+    Showreel.pause();
+    const p = v.play(); if (p && p.catch) p.catch(() => {});
+    setTimeout(() => $('.vmodal-close', m).focus(), 50);
   }
-
-  function collapseErNode() {
-    const wrap = $('#erDiagram');
-    if (!wrap) return;
-    wrap.querySelectorAll('.er-node').forEach(n => {
-      n.classList.remove('expanded');
-      n.setAttribute('aria-expanded', 'false');
-    });
-    wrap.classList.remove('has-expanded');
-    activeErIndex = -1;
-    setTimeout(() => { drawErConnections(); drawFeaturedToEr(); }, 420);
+  function closeModal() {
+    const m = $('#vmodal'), v = $('#vmodalVideo');
+    if (!m.classList.contains('open')) return;
+    v.pause();
+    m.classList.remove('open'); m.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+    if (lastFocus) lastFocus.focus();
   }
-
-  function drawErConnections() {
-    const svg = $('#erConnections');
-    const wrap = $('#erDiagramWrap');
-    const nodes = $$('.er-node');
-    if (!svg || !wrap || nodes.length < 2) return;
-    const wrapRect = wrap.getBoundingClientRect();
-    svg.setAttribute('viewBox', `0 0 ${wrapRect.width} ${wrapRect.height}`);
-    svg.setAttribute('preserveAspectRatio', 'none');
-    while (svg.firstChild) svg.removeChild(svg.firstChild);
-    if ($('#erDiagram.has-expanded')) return;
-
-    const nodeInfo = nodes.map((n, i) => ({ node: n, index: i, rect: n.getBoundingClientRect(), ports: getPorts(n, wrapRect) }));
-    const pairs = [];
-    for (let i = 0; i < nodeInfo.length - 1; i++) {
-      const a = nodeInfo[i], b = nodeInfo[i + 1];
-      // Se a próxima tabela está na mesma linha da grelha, liga direita→esquerda
-      // (fluxo normal). Se a grelha quebrou linha, liga por baixo→cima, como
-      // um conector em cotovelo de diagrama de base de dados a "descer de fila".
-      const sameRow = Math.abs(a.rect.top - b.rect.top) < 16;
-      if (sameRow) {
-        pairs.push({ from: a, fromSide: 'right', to: b, toSide: 'left', style: 'primary' });
-      } else {
-        pairs.push({ from: a, fromSide: 'bottom', to: b, toSide: 'top', style: 'primary' });
-      }
-    }
-    for (let i = 0; i < nodeInfo.length; i++) {
-      for (let j = i + 1; j < nodeInfo.length; j++) {
-        if (j === i + 1) continue;
-        const shared = sharedStack(erProjects[i]?.stack, erProjects[j]?.stack);
-        if (shared.length) {
-          pairs.push({ from: nodeInfo[i], fromSide: 'bottom', to: nodeInfo[j], toSide: 'top', style: 'ghost' });
-        }
-      }
-    }
-    pairs.forEach(({ from, fromSide, to, toSide, style }) => {
-      const p1 = from.ports[fromSide], p2 = to.ports[toSide];
-      const path = buildCurvedPath(p1, p2, fromSide, toSide);
-      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      const halo = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      halo.setAttribute('d', path);
-      halo.setAttribute('fill', 'none');
-      halo.setAttribute('stroke', 'var(--accent)');
-      halo.setAttribute('stroke-width', '6');
-      halo.setAttribute('stroke-opacity', '0.06');
-      halo.setAttribute('stroke-linecap', 'round');
-      const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      line.setAttribute('d', path);
-      line.setAttribute('fill', 'none');
-      line.setAttribute('stroke', 'var(--accent)');
-      line.setAttribute('stroke-width', '1.5');
-      line.setAttribute('stroke-opacity', '0.55');
-      line.setAttribute('stroke-linecap', 'round');
-      if (style === 'ghost') line.setAttribute('stroke-dasharray', '4 4');
-      const c1 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      c1.setAttribute('cx', p1.x); c1.setAttribute('cy', p1.y);
-      c1.setAttribute('r', '3'); c1.setAttribute('fill', 'var(--accent)'); c1.setAttribute('fill-opacity', '0.85');
-      const c2 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      c2.setAttribute('cx', p2.x); c2.setAttribute('cy', p2.y);
-      c2.setAttribute('r', '3'); c2.setAttribute('fill', 'var(--accent)'); c2.setAttribute('fill-opacity', '0.85');
-      g.appendChild(halo); g.appendChild(line); g.appendChild(c1); g.appendChild(c2);
-      svg.appendChild(g);
-    });
-  }
-
-  function getPorts(node, wrapRect) {
-    const r = node.getBoundingClientRect();
-    return {
-      left:   { x: r.left - wrapRect.left,               y: r.top - wrapRect.top + r.height / 2 },
-      right:  { x: r.right - wrapRect.left,              y: r.top - wrapRect.top + r.height / 2 },
-      top:    { x: r.left - wrapRect.left + r.width / 2, y: r.top - wrapRect.top },
-      bottom: { x: r.left - wrapRect.left + r.width / 2, y: r.bottom - wrapRect.top }
-    };
-  }
-
-  function buildCurvedPath(p1, p2, side1, side2) {
-    const dx = p2.x - p1.x, dy = p2.y - p1.y;
-    const dist = Math.sqrt(dx * dx + dy * dy);
-    const curve = Math.min(Math.max(dist * 0.42, 40), 160);
-    let c1x = p1.x, c1y = p1.y, c2x = p2.x, c2y = p2.y;
-    if (side1 === 'right')  c1x += curve;
-    if (side1 === 'left')   c1x -= curve;
-    if (side1 === 'top')    c1y -= curve;
-    if (side1 === 'bottom') c1y += curve;
-    if (side2 === 'right')  c2x += curve;
-    if (side2 === 'left')   c2x -= curve;
-    if (side2 === 'top')    c2y -= curve;
-    if (side2 === 'bottom') c2y += curve;
-    return `M ${p1.x} ${p1.y} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${p2.x} ${p2.y}`;
-  }
-
-  function sharedStack(a, b) {
-    if (!a || !b) return [];
-    return a.filter(x => b.includes(x));
-  }
-
-  function drawFeaturedToEr() {
-    const svg = $('#featuredToEr');
-    const wrap = $('.featured-to-er-wrap');
-    const featured = $('.project-block');
-    const erHead = $('.section-head-er');
-    if (!svg || !wrap || !featured || !erHead) return;
-    const wrapRect = wrap.getBoundingClientRect();
-    if (wrapRect.width === 0 || wrapRect.height === 0) return;
-    svg.setAttribute('viewBox', `0 0 ${wrapRect.width} ${wrapRect.height}`);
-    while (svg.firstChild) svg.removeChild(svg.firstChild);
-
-    const fRect = featured.getBoundingClientRect();
-    const eRect = erHead.getBoundingClientRect();
-
-    const x0 = Math.min(Math.max(fRect.right - wrapRect.left - 80, 30), wrapRect.width - 30);
-    const y0 = 4;
-    const x1 = Math.min(Math.max(eRect.left - wrapRect.left + 20, 30), wrapRect.width - 30);
-    const y1 = Math.min(Math.max(eRect.top - wrapRect.top + 20, 4), wrapRect.height - 4);
-
-    const c1x = x0;
-    const c1y = y0 + wrapRect.height * 0.55;
-    const c2x = x1 + 100;
-    const c2y = y1;
-    const d = `M ${x0} ${y0} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${x1} ${y1}`;
-
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('d', d);
-    path.setAttribute('fill', 'none');
-    path.setAttribute('stroke', 'var(--accent)');
-    path.setAttribute('stroke-width', '1.5');
-    path.setAttribute('stroke-opacity', '0.5');
-    path.setAttribute('stroke-linecap', 'round');
-    path.setAttribute('stroke-dasharray', '6 5');
-
-    const cS = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    cS.setAttribute('cx', x0); cS.setAttribute('cy', y0);
-    cS.setAttribute('r', '3.5'); cS.setAttribute('fill', 'var(--accent)'); cS.setAttribute('fill-opacity', '0.9');
-
-    const cE = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    cE.setAttribute('cx', x1); cE.setAttribute('cy', y1);
-    cE.setAttribute('r', '3.5'); cE.setAttribute('fill', 'var(--accent)'); cE.setAttribute('fill-opacity', '0.9');
-
-    svg.appendChild(path); svg.appendChild(cS); svg.appendChild(cE);
+  function bindModal() {
+    $$('[data-vclose]').forEach(el => el.addEventListener('click', closeModal));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   }
 
   function toggleProcess(id, btn) {
@@ -849,21 +732,138 @@ const Projects = (() => {
     body.scrollTop = body.scrollHeight;
   }
 
+  let modalBound = false;
   async function render() {
     await renderFeaturedSection();
-    await renderEr();
-    let rt = null;
-    window.addEventListener('resize', () => {
-      clearTimeout(rt);
-      rt = setTimeout(() => { drawErConnections(); drawFeaturedToEr(); }, 120);
-    });
-    window.addEventListener('load', () => setTimeout(() => { drawErConnections(); drawFeaturedToEr(); }, 200));
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(() => setTimeout(() => { drawErConnections(); drawFeaturedToEr(); }, 120));
-    }
+    await renderGrid();
+    if (!modalBound) { bindModal(); modalBound = true; }
+    if (window.UI && UI.initReveal) UI.initReveal();
   }
 
-  return { render, redraw: () => { drawErConnections(); drawFeaturedToEr(); } };
+  return { render, redraw: () => {} };
+})();
+
+/* ─────────────────────────────────────────────
+   MÓDULO 8.5 — SHOWREEL (vídeo principal interativo)
+───────────────────────────────────────────── */
+const Showreel = (() => {
+  let video, chapters = [], userPaused = false, inView = false;
+
+  function fmt(s) { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
+
+  function currentIndex(time) {
+    let idx = -1;
+    chapters.forEach((c, i) => { if (time >= c.start - 0.05) idx = i; });
+    return idx;
+  }
+
+  function buildChapters(data) {
+    const list = $('#reelChapters'), marks = $('#reelMarks');
+    const projects = (data.projects || []).filter(p => p.chapter != null);
+    chapters = projects.map(p => ({ start: p.chapter, proj: p }));
+    list.innerHTML = chapters.map((c, i) => `
+      <li><button type="button" class="reel-chap" data-i="${i}">
+        <span class="reel-chap-thumb"><img src="${c.proj.poster}" alt="" loading="lazy"><span class="reel-chap-fill"></span></span>
+        <span class="reel-chap-txt">
+          <span class="reel-chap-num">${String(i + 1).padStart(2, '0')} · ${fmt(c.start)}</span>
+          <span class="reel-chap-name">${field(c.proj, 'name')}</span>
+          <span class="reel-chap-langs">${(c.proj.langs || []).slice(0, 3).join(' · ')}</span>
+        </span>
+      </button></li>`).join('');
+    $$('.reel-chap', list).forEach(b => b.addEventListener('click', () => goTo(chapters[+b.dataset.i].start, false)));
+    const placeMarks = () => {
+      if (!video.duration) return;
+      marks.innerHTML = chapters.map(c => `<span style="left:${c.start / video.duration * 100}%"></span>`).join('');
+    };
+    video.addEventListener('loadedmetadata', placeMarks);
+    if (video.readyState >= 1) placeMarks();
+  }
+
+  function update() {
+    if (!video.duration) return;
+    const tt = video.currentTime;
+    $('#reelFill').style.width = (tt / video.duration * 100) + '%';
+    $('#reelTime').textContent = fmt(tt) + ' / ' + fmt(video.duration);
+    const idx = currentIndex(tt);
+    $$('.reel-chap').forEach((b, i) => {
+      b.classList.toggle('active', i === idx);
+      const c = chapters[i], end = chapters[i + 1] ? chapters[i + 1].start : (c.start + 5);
+      const k = Math.min(1, Math.max(0, (tt - c.start) / (end - c.start)));
+      b.querySelector('.reel-chap-fill').style.width = (i < idx ? 100 : i === idx ? k * 100 : 0) + '%';
+    });
+    const now = $('#reelNow');
+    if (idx >= 0) {
+      const p = chapters[idx].proj;
+      const html = `<span>${String(idx + 1).padStart(2, '0')}</span> ${field(p, 'name')}`;
+      if (now.dataset.idx !== String(idx)) { now.dataset.idx = idx; now.innerHTML = html; now.classList.remove('show'); void now.offsetWidth; now.classList.add('show'); }
+    } else { now.classList.remove('show'); now.dataset.idx = ''; }
+  }
+
+  function setPlaying(on) { $('#reel').classList.toggle('is-playing', on); }
+
+  function play() { const p = video.play(); if (p && p.catch) p.catch(() => {}); }
+  function pause() { if (video) video.pause(); }
+
+  function goTo(time, scroll = true) {
+    if (!video) return;
+    if (scroll) $('#showreel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    video.currentTime = time + 0.05;
+    userPaused = false;
+    play();
+  }
+
+  function seekFromEvent(e) {
+    const r = $('#reelBar').getBoundingClientRect();
+    const x = Math.min(1, Math.max(0, ((e.touches ? e.touches[0].clientX : e.clientX) - r.left) / r.width));
+    video.currentTime = x * video.duration;
+    update();
+  }
+
+  async function init() {
+    video = $('#reelVideo');
+    if (!video) return;
+    const data = await Data.load();
+    buildChapters(data);
+    video.addEventListener('timeupdate', update);
+    video.addEventListener('play', () => setPlaying(true));
+    video.addEventListener('pause', () => setPlaying(false));
+    video.addEventListener('ended', () => { video.currentTime = 0; play(); });
+
+    const toggle = () => { if (video.paused) { userPaused = false; play(); } else { userPaused = true; pause(); } };
+    $('#reelPlay').addEventListener('click', toggle);
+    $('#reelBigPlay').addEventListener('click', toggle);
+    video.addEventListener('click', toggle);
+    $('#reelFull').addEventListener('click', () => {
+      const stage = $('.reel-stage');
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (stage.requestFullscreen) stage.requestFullscreen();
+      else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
+    });
+    const bar = $('#reelBar');
+    let dragging = false;
+    bar.addEventListener('pointerdown', e => { dragging = true; bar.setPointerCapture(e.pointerId); seekFromEvent(e); });
+    bar.addEventListener('pointermove', e => { if (dragging) seekFromEvent(e); });
+    bar.addEventListener('pointerup', () => { dragging = false; });
+    bar.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') video.currentTime = Math.min(video.duration, video.currentTime + 5);
+      if (e.key === 'ArrowLeft') video.currentTime = Math.max(0, video.currentTime - 5);
+    });
+
+    // Toca sozinho (sem som) quando o showreel entra no ecrã e pausa quando sai
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          inView = en.isIntersecting;
+          if (inView && !userPaused && !document.querySelector('#vmodal.open')) { video.preload = 'auto'; play(); }
+          else if (!inView) pause();
+        });
+      }, { threshold: 0.45 });
+      io.observe($('.reel-stage'));
+    }
+    document.addEventListener('langchange', () => buildChapters(data));
+  }
+
+  return { init, goTo, pause };
 })();
 
 /* ─────────────────────────────────────────────
@@ -1069,6 +1069,7 @@ const UI = (() => {
 window.Skills = Skills;
 window.Chart = Chart;
 window.Projects = Projects;
+window.Showreel = Showreel;
 window.Formacao = Formacao;
 window.Lang = Lang;
 
@@ -1084,6 +1085,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   await Skills.render();
   await Chart.render();
   await Projects.render();
+  await Showreel.init();
   await Formacao.render();
 
   UI.init();
