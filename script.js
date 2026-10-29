@@ -302,6 +302,7 @@ const Skills = (() => {
     'Git':'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
     'Linux':'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
     'Java':'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+    'Kotlin':'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg',
     'VS Code':'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
     'Proxmox':'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/proxmox/proxmox-original.svg',
     'SQLite':'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg',

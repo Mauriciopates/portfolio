@@ -66,6 +66,11 @@
       "tier_en": "Learning"
     },
     {
+      "name": "Kotlin",
+      "tier": "Em aprendizagem",
+      "tier_en": "Learning"
+    },
+    {
       "name": "VS Code",
       "tier": "Uso frequente",
       "tier_en": "Everyday use"
@@ -89,6 +94,12 @@
       "label_en": "Web (Frontend)",
       "count": 3,
       "color": "var(--viz-blue-3)"
+    },
+    {
+      "label": "Aplicações Móveis",
+      "label_en": "Mobile Apps",
+      "count": 1,
+      "color": "var(--viz-blue-4)"
     }
   ],
   "projects": [
@@ -235,6 +246,37 @@
       "video_featured": "videos/hostel-destaque.mp4"
     },
     {
+      "id": "colecao",
+      "name": "Coleção de Videojogos",
+      "name_en": "Video Game Collection",
+      "tags": "Kotlin · Jetpack Compose · Room",
+      "year": "2026",
+      "category": "Aplicações Móveis",
+      "category_en": "Mobile Apps",
+      "desc": "<p>Aplicação Android para gerir uma coleção pessoal de videojogos, desenvolvida em Kotlin com Jetpack Compose (Material 3). Trabalho prático individual da UFCD 00609 – Desenvolver aplicações móveis (curso TPSI, IEFP Porto).</p><ul><li><strong>Ecrã inicial</strong> – jogo em destaque \"A jogar agora\", barra com a proporção de cada estado e contagem por plataforma;</li><li><strong>Coleção</strong> – pesquisa por nome, filtros por estado e ordenação por nome, mais recentes ou ano;</li><li><strong>Formulário</strong> – adicionar e editar com validação campo a campo, e eliminar com diálogo de confirmação;</li><li><strong>Arquitetura</strong> – ViewModel partilhado, Navigation Compose e persistência local com Room (SQLite).</li></ul>",
+      "desc_en": "<p>Android app to manage a personal video game collection, built in Kotlin with Jetpack Compose (Material 3). Individual project for UFCD 00609 – Mobile application development (TPSI course, IEFP Porto).</p><ul><li><strong>Home screen</strong> – \"Now playing\" highlight, a bar showing the share of each status and a count per platform;</li><li><strong>Collection</strong> – search by name, status filters and sorting by name, most recent or year;</li><li><strong>Form</strong> – add and edit with per-field validation, and delete with a confirmation dialog;</li><li><strong>Architecture</strong> – shared ViewModel, Navigation Compose and local persistence with Room (SQLite).</li></ul>",
+      "stack": [
+        "Kotlin",
+        "Jetpack Compose",
+        "Room",
+        "Android"
+      ],
+      "langs": [
+        "Kotlin",
+        "Jetpack Compose",
+        "Material 3",
+        "Room",
+        "ViewModel",
+        "Navigation Compose"
+      ],
+      "short": "App Android para gerir jogos: pesquisa, filtros, ordenação, validação e base de dados local.",
+      "short_en": "Android app to manage games: search, filters, sorting, validation and a local database.",
+      "video": "videos/colecao.mp4",
+      "poster": "videos/posters/colecao.jpg",
+      "chapter": 8.8,
+      "link": "https://github.com/Mauriciopates/ColecaoVideoJogos"
+    },
+    {
       "id": "bds",
       "name": "Loja online BDS · Blue Digital Store",
       "name_en": "BDS · Blue Digital Store online shop",
@@ -260,7 +302,7 @@
       "short_en": "Catalog, customizer with 3D preview, quantity pricing and a quote assistant.",
       "video": "videos/bds.mp4",
       "poster": "videos/posters/bds.jpg",
-      "chapter": 8.8,
+      "chapter": 13.8,
       "link": "https://github.com/Mauriciopates/bds_prototipo",
       "demo": "https://mauriciopates.github.io/bds_prototipo/"
     },
@@ -359,7 +401,7 @@
       ],
       "link": "https://github.com/Mauriciopates/Database_automation_SIAPE",
       "video": "videos/siape.mp4",
-      "chapter": 13.8,
+      "chapter": 18.8,
       "langs": [
         "Python",
         "Tkinter",
@@ -466,7 +508,7 @@
       ],
       "link": "https://github.com/Mauriciopates/Database_automation_GPGF",
       "video": "videos/cpgf.mp4",
-      "chapter": 18.8,
+      "chapter": 23.8,
       "langs": [
         "Python",
         "Pandas",
@@ -580,7 +622,7 @@
       ],
       "link": "https://github.com/Mauriciopates/Projeto_seguranca",
       "video": "videos/relatorios.mp4",
-      "chapter": 23.8,
+      "chapter": 28.8,
       "langs": [
         "Python",
         "Tkinter",
@@ -632,7 +674,7 @@
       ],
       "link": "https://github.com/Mauriciopates/portfolio/tree/main/Projetos_html/Curiosidades_ocultas",
       "video": "videos/curiosidades.mp4",
-      "chapter": 28.8,
+      "chapter": 33.8,
       "langs": [
         "HTML5",
         "CSS3",
@@ -683,7 +725,7 @@
       ],
       "link": "https://github.com/Mauriciopates/portfolio/tree/main/Projetos_html/Jogo_adivinha",
       "video": "videos/adivinha.mp4",
-      "chapter": 33.8,
+      "chapter": 38.8,
       "langs": [
         "HTML5",
         "CSS3",
@@ -800,6 +842,6 @@
     "webm": "videos/showreel.webm",
     "poster": "videos/posters/showreel.jpg",
     "intro": 0,
-    "outro": 38.8
+    "outro": 43.8
   }
 }

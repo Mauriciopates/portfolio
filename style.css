@@ -1776,7 +1776,7 @@ body.no-scroll { overflow: hidden; }
 .reel-bar-marks span { position: absolute; top: -2px; bottom: -2px; width: 2px; background: rgba(5, 9, 7, 0.9); }
 .reel-time { font-family: var(--font-mono); font-size: 0.72rem; color: #d7e9dd; min-width: 78px; text-align: right; }
 
-.reel-chapters { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; max-height: 100%; overflow-y: auto; scrollbar-width: thin; }
+.reel-chapters { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; max-height: 100%; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #24372c transparent; }
 .reel-chap {
   width: 100%; display: flex; gap: 0.7rem; align-items: center; text-align: left; cursor: pointer;
   background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius);
